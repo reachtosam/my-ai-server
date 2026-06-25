@@ -4,11 +4,12 @@ services:
     container_name: open-webui
     restart: always
     ports:
-      - "3000:8080"
+      - "127.0.0.1:3000:8080"
     volumes:
-      - open-webui-data:/app/backend/data
+      - open-webui:/app/backend/data
     env_file:
       - app/.env
 
 volumes:
-  open-webui-data:
+  open-webui:
+    external: true
